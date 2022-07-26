@@ -1,0 +1,177 @@
+body{
+  &.sideBar-hide{
+    .sideBar{
+      width: $header-height;
+      &__controler{
+        &::after{
+          transform: rotate(180deg);
+          color: $primary-blue;
+        }
+      }
+    }
+    .accordion{
+      padding: 0;
+      &-button{
+        &:hover{
+          color: $primary-blue;
+          span{
+            padding-left: 6px;
+          }
+          &::before{
+            content: "";
+            width: 3px; height: 100%;
+            display: block; 
+            background-color: $primary-blue;
+            position: absolute; top: 0; left: 0;
+          }
+        }
+      }
+    }
+    #logo{
+      padding: $top-bottom-padding + 2px 0;
+      #logo-text{display: none;}
+    }
+    .sns{
+      flex-direction: column;
+    }
+  }
+  &.offCanvas{
+    .sideBar{
+      &__controler{
+        background-color: $primary-blue;
+        &::after{
+          transform: rotate(0deg);
+          color: $white;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .offCanvas{
+    .sideBar{
+      transform: translate(0, 0);
+    }
+  }
+}
+.sideBar{
+  $button-collapse: $primary-blue-lighten300-grey;
+  display: flex;
+  flex-direction: column;
+  width: $side-bar-width; height: 100%;z-index: 1000;
+  background-color: $white;
+  position: fixed;top: 0;left: 0;
+  white-space: nowrap;
+  transition: all 0.5s;
+  box-shadow: 0 3px 12px 0 rgba($primary-blue-darken400, 0.3);
+  @include media-breakpoint-down(md) {
+    width: calc(100% - (($icon-size1 * 2) + ($icon-size1 + 4px)));
+    transform: translate(-100%, 0);
+    transition: transform 1s;
+  }
+  &__controler{
+    @include flex-center-center;
+    width: $icon-size1; height: $icon-size1;
+    background-color: #fff;
+    border: 1px solid rgba(58,59,95,0.2);
+    border-radius: 7px;
+    box-shadow: 0 3px 12px 0 rgba($primary-blue-darken400, 0.15);
+    position: absolute; 
+    top: calc(($header-height - $icon-size1) / 2); right: -$top-bottom-padding;
+    &::after{
+      @include material-icon($icon-size1);
+      content: "\e5cb";
+      color: rgba($primary-blue-darken400, 0.6);
+    }
+  }
+  .accordion{
+    flex: 1 1 0;
+    overflow: hidden;
+    padding: 0 $icon-position;
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+    &-body{
+      width: calc(100% - ($icon-position * 2));
+      background-color: $primary-blue-lighten300;
+      margin: 0 auto $icon-position auto;
+      padding: calc($top-bottom-padding/2) calc($right-left-padding - $icon-position);
+      border-radius: $top-bottom-padding;
+      border: 1px solid rgba($black, 0.015);
+      @include media-breakpoint-down(md) {
+        padding: calc($top-bottom-padding/2) $icon-size1;
+      }
+      > a{
+        color: $button-collapse;
+        &:hover{
+          color: darken($primary-blue-lighten300-grey, 15%);
+          text-decoration: underline;
+        }
+      }
+    }
+    &-button{
+      padding: $top-bottom-padding $header-height;
+      color: darken($primary-blue-lighten300-grey, 15%);
+      font-weight: bold;
+      @include media-breakpoint-down(md) {
+        padding: $top-bottom-padding $icon-size3;
+      }
+      &.collapsed{
+        color: $button-collapse;
+      }
+    }
+    &-item{
+      border: {
+        bottom: 1px solid rgba($primary-blue-lighten300-grey, 0.15);
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      &:first-of-type,&:last-of-type{
+        border-radius: 0;
+        .accordion-button{
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+#logo{
+  @include flex-center-center;
+  height: $header-height;
+  border-bottom: 1px solid rgba($black, 0.1);
+  padding: $top-bottom-padding 0;
+  overflow: hidden;
+  background-color: $white;
+  @include media-breakpoint-down(md) {
+    height: $icon-size3;
+  }
+  a{
+    display: block;
+    height: 100%;
+    font-size: 0;
+    margin: 0 auto;
+  }
+}
+.sns{
+  display: flex;
+  align-items: center;
+  padding: $icon-position;
+  gap: 7px;
+  transition: all 0.5s;
+  a{
+    @include flex-center-center;
+    width: $icon-size3 - 10px; height: $icon-size3 - 10px;
+    color: $white;
+    border-radius: 50%;
+    font-size: 1.36rem;
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    &[title="instagram"]{
+      background: #d6249f;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    }
+    &[title="github"]{
+      background: #171515;
+    }
+  }
+}

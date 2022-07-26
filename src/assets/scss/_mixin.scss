@@ -1,0 +1,36 @@
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-spaceBetween-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin btn($background) {
+  background: {color: $background}
+  &:hover{
+    background: {color: darken($background, 7%)}
+  }
+  &,&:hover{
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+}
+@mixin material-icon($size) {
+  @include flex-center-center;
+  font: {
+    family: 'Material Symbols Outlined';
+    weight: normal;
+    style: normal;
+    size: $size;
+  }
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

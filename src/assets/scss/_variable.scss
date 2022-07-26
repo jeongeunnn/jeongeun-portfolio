@@ -1,0 +1,69 @@
+/* color */
+//greyscale
+$white: #fff;
+$grey100:#f1f1f1;
+$grey200:#e3e3e8;
+$grey300:#999999;
+$grey400: #787878;
+$grey500:#646464;
+$grey600: #4d4d4d;
+$grey700: #262626;
+$black: #000;
+
+//primary color
+$primary-blue: #5a81fa;//#5d5fee;
+$primary-blue-darken400: #2b318a;//#30325E;
+$primary-blue-lighten200: #cddeff;//#8182f1;
+$primary-blue-lighten300:#f2f5ff;
+$primary-blue-lighten400: #f8f9fd;//#f3f3f7;
+$primary-blue-lighten300-grey:#6a6e83;//#a8b1ce;//#9c9caf;
+$primary-blue-lighten400-grey: #a8b1ce;
+
+//sementic color
+$red: #f23648;
+$orange: #ff922b;
+$green: #21a67a;
+$blue: #339af0;
+
+/* fonts */
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$body-font-family: 'NanumSquareRound',sans-serif;
+
+$playfair: 'Playfair Display', serif;
+$roboto: 'Roboto', sans-serif;
+
+$header-height: 58px;
+$header-padding: 72px;
+
+$side-bar-width: 250px;
+
+$top-bottom-padding: 12px;
+$right-left-padding: 52px;
+$icon-size1: 24px;
+$icon-size2: 18px;
+$icon-size3:44px;
+
+$icon-position: calc(($header-height - ($icon-size2 + 3px)) / 2);
+$icon-position-m: calc(($icon-size3 - ($icon-size2 + 3px)) / 2);
+
+

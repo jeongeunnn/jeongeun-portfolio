@@ -1,0 +1,96 @@
+/* .project-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: $icon-size1;
+  .project{
+    width: calc((100% - ($icon-size1 * 4)) / 5);
+  }
+} */
+.project{
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  &:hover{
+    .project__text{
+      opacity: 1;
+      b,p{
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+      }
+      &::before,&::after{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+    img{
+      filter: grayscale(1) blur(1px);
+    }
+  }
+  &__box{
+    display: block;
+    width: 100%; height: 100%;
+  }
+  &__text{
+    @include flex-center-center;
+    flex-direction: column;
+    width: 100%; height: 100%;
+    background-color: rgba(58, 59, 95, 70%);
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+    padding: 21px;
+    text-align: center;
+    b{
+      font: {
+        size: 1.1rem;
+        weight: bold;
+      };
+      line-height: 1.5;
+    }
+    p{
+      font-weight: lighter;
+      margin-top: 10px;
+    }
+    b,p{
+      -webkit-transition: transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0,-10px,0);
+      transform: translate3d(0,-10px,0);
+    }
+    &::after,&::before{
+      position: absolute;
+      content: '';
+      transition: transform 0.35s;
+    }
+    &::after{
+      top: 7px; right: 14px; bottom: 7px; left:14px;
+      border: {
+        right: 1px solid $white;
+        left: 1px solid $white;
+      }
+      -webkit-transform: scale(1,0);
+      transform: scale(1,0);
+      -webkit-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+    }
+    &::before{
+      top: 14px; right:7px; bottom:14px; left:7px;
+      border: {
+        top: 1px solid $white;
+        bottom: 1px solid $white;
+      }
+      -webkit-transform: scale(0,1);
+      transform: scale(0,1);
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+    }
+  }
+  img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+}
