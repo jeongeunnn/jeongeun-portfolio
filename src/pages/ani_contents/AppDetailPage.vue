@@ -1,5 +1,8 @@
 <template>
-  <button type="button" id="back" @click="$router.go(-1)">뒤로가기</button>
+  <button type="button" id="back" @click="$router.go(-1)">
+    Go Back:)
+  </button>
+
   <AppWaveEffect v-if="id == 0 && pageName == 'animation'"/>
   <AppParticleEffect v-if="id == 1 && pageName == 'animation'"/>
   <AppGsapEffect v-if="id == 2 && pageName == 'animation'"/>
@@ -33,11 +36,6 @@
       AppWebglEffect,
       AppToDo,
       AppDrawingBoard,
-    },
-    methods: {
-      checkPage(){
-
-      }
     },
   }
 </script>
