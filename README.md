@@ -2,7 +2,7 @@
 안녕하세요. 
 4년차 웹퍼블리셔 박정은입니다.
 
-## 사용한 플러그인
+### 사용한 플러그인
 ```
 - sass-loader
 - node-sass
@@ -19,5 +19,5 @@
 
 ### portfolio site
 ```
-npm run serve
+jeongeunnn.github.io
 ```
