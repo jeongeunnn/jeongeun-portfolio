@@ -20,7 +20,11 @@
         :aria-labelledby="`panelsStayOpen-heading${index}`"
       >
         <div class="accordion-body">
-          <router-link class="list-item" :to="setUrl(item.url, counter, item.subTitle.length)" v-for="(list, counter) in item.subTitle" :key="counter">
+          <router-link class="list-item" 
+            :to="setUrl(item.url, counter, item.subTitle.length)" 
+            v-for="(list, counter) in item.subTitle" :key="counter"
+            @click="isDevice === 'mobile' ? $store.commit('handleNav') : null"
+          >
             {{ list }}
           </router-link>
         </div>
@@ -35,13 +39,33 @@
 
   export default {
     name: 'AppNavgation', 
+    data() {
+      return {
+        isDevice: ''
+      }
+    },
     props: {
       hideSideBar: Boolean,
     },
     computed: {
-      ...mapState(['nav'])
+      ...mapState({
+        nav: 'nav',
+      }),
+    },
+    created() {
+      this.checkSize();
+      window.addEventListener("resize", this.checkSize);
+    },
+    unmounted() {
+      window.removeEventListener("resize", this.checkSize);
     },
     methods: {
+      checkSize(){
+        const ww = document.body.clientWidth;
+        if(ww < 768){
+          this.isDevice = 'mobile';
+        }
+      },
       setUrl(url, counter, numberOfSubTitle){
         const pathOfElem = `${url}/${counter}`;
         return numberOfSubTitle > 1 ? pathOfElem : url
