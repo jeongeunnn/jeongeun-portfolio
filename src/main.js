@@ -10,4 +10,4 @@ import './assets/scss/index.scss';
 import Router from "./router.js";
 import store from './store.js'
 
-createApp(App).use(store).use(Router).mount('#app')
+createApp(App).use(store).use(Router).mount('#app');

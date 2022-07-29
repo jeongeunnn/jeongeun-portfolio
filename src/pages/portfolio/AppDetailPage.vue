@@ -16,7 +16,7 @@
         <dl>
           <dt>URL</dt>
           <dd>
-            <a id="url" :href="projects[id].url" target="_blank">
+            <a id="url" :href="projects[id].url" target="_blank" :title="`${projects[id].name} 바로가기`">
               {{ projects[id].url }}
             </a>
           </dd>

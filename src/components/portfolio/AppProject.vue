@@ -3,8 +3,8 @@
     <h4 class="fs-3 fw-bold">Portfolio</h4><small>since 2019</small>
     <router-link :to="nav[1].url" class="title__btn">View all</router-link>
   </div>
-  <div class="round-box space-box"  style="overflow:hidden;">
-    <div style="width:100%; height:100%;">
+  <div class="round-box space-box">
+    <div>
       <swiper
         :breakpoints="swiperOptions.breakpoints"
         @swiper="onSwiper"
@@ -27,7 +27,7 @@
   import 'swiper/css';
 
   //components
-  import AppCard from "./AppCard";
+  import AppCard from "../AppCard";
 
   export default {
     name: 'AppProject',
@@ -35,7 +35,7 @@
       return {
         swiperOptions: {
           breakpoints: {       
-            540: {       
+            320: {       
               slidesPerView: 1.5,  
               spaceBetween: 4  
             }, 
@@ -69,19 +69,6 @@
         projects: 'projects',
         nav: 'nav'
       })
-    },
-    setup() {
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
-      return {
-        onSwiper,
-        onSlideChange,
-        //modules: [Navigation, Pagination, Scrollbar, A11y],
-      };
     },
   }
 </script>

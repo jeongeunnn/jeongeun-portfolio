@@ -124,7 +124,6 @@
             setTimeout(this.typeText, this.typingSpeed);
           }
           if(this.charIndex == this.displayTextArray[this.textArrayIndex].length && this.textArrayIndex != this.displayTextArray.length-1){
-            console.log(this.textArrayIndex);
             typedText.innerHTML += '<br>';
             this.textArrayIndex += 1;
             this.charIndex = 0;

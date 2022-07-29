@@ -16,12 +16,6 @@ const store = createStore({
             subTitle: ['All Projects'],
             url: '/portfolio'
         },
-       /*  {
-            title: 'Contents',
-            icon: 'dashboard',
-            subTitle: ['To Do List', 'Drawing Board',],
-            url: '/contents'
-        }, */
         {
             title: 'Animations',
             icon: 'animation',
@@ -34,7 +28,7 @@ const store = createStore({
         contact: '연락하기',
       },
       modal: {
-        title: '',
+        title: null,
       },
       logo: {
         file: 'logo.png',
@@ -48,11 +42,13 @@ const store = createStore({
       sns: [
         {
           cName: 'bi bi-github',
-          title: 'github'
+          title: 'github',
+          url: 'https://github.com/jeongeunnn/jeongeun-portfolio'
         },
         {
           cName: 'bi bi-instagram',
-          title: 'instagram'
+          title: 'instagram',
+          url: 'https://www.instagram.com/jjj_eunnn/'
         },
       ],
       projects: [
@@ -199,11 +195,34 @@ const store = createStore({
           company: '비즈메이커(웹에이전시)',
         }
       ],
+      animations: [
+        {
+          name: 'wave',
+          file: 'wave.jpg',
+          id: 0,
+        },
+        {
+          name: 'particle',
+          file: 'particle.jpg',
+          id: 1,
+        },
+        {
+          name: 'hover',
+          file: 'hover.jpg',
+          id: 2,
+        },
+        {
+          name: 'image',
+          file: 'image.jpg',
+          id: 3,
+        },
+      ],
       pageRoot: undefined,
       pageTitle: undefined,
       timeline: [
         {
           company: '(주)데이터사이언스연구소',
+          address: '서울시 마포구 토정로35길 11 5층 5362호',
           position: '개발팀/책임(프리랜서)',
           period: '2021.12 ~ 2022.05',
           role: ['대한항공케이터링센터 NonERP UI 고도화 구축 프로젝트', 
@@ -214,6 +233,7 @@ const store = createStore({
         },
         {
           company: '(주)미래와기술',
+          address: '서울 구로구 디지털로29길 38, 905호',
           position: '개발팀/책임(프리랜서)',
           period: '2022.03 ~ 2022.04',
           role: ['한솔PNS PMS UI 고도화 구축 프로젝트', 
@@ -223,6 +243,7 @@ const store = createStore({
         },
         {
           company: 'sbs아카데미컴퓨터아트학원',
+          address: '경기도 고양시 일산동구 정발산로 23 402호',
           position: '교육부/강사',
           period: '2021.04 ~ 2021.12',
           role: ['웹퍼블리싱(Html, Css, Javascript, jQuery) 기초 및 포트폴리오 강의',
@@ -231,6 +252,7 @@ const store = createStore({
         },
         {
           company: '비즈메이커(웹에이전시)',
+          address: '부산시 부산진구 범천동 879-2 서면베르빌 2차 412호',
           position: '개발팀/대리',
           period: '2019.02 ~ 2021.04',
           role: ['프로젝트 신규개발 담당(Html/Css/javascript/jQuery/웹표준/웹접근성)', 
@@ -277,52 +299,56 @@ const store = createStore({
       ],
       faq: [
         {
-          question: '자신에 대해 자유롭게 표현해 주세요.',
-          answer: `저는 4년차 웹퍼블리셔로 웹에이전시에서 웹 서비스 개발과 유지보수를 담당하였고, 
-                  이후 프리랜서로 프로젝트에 참여하여 백오피스를 개발한 경험이 있습니다.
-                  처음 일했던 웹에이전시에서는 주로 학교와 복지관 웹사이트 위주의 개발을 진행하여 
-                  웹표준과 웹접근성을 준수하는 마크업해왔으며 반응형 웹 설계 및 크로스브라우징 경험이 있습니다.
-                  그리고 디자인과 퍼블리싱 두가지 업무를 하였기에 
-                  웹에 적합한 UI/UX에 대한 경험과 감각을 바탕으로 커뮤니케이션 할 수 있습니다.<br><br>
-
-                  반복되는 일을 줄여 효율적으로 개발하는 일에 관심이 많습니다.
-                  그래서 프리랜서로 참여한 대한항공케이터링센터와 한솔PNS에서의 UI고도화 프로젝트에서
-                  자동화 빌드 시스템 Gulp와 Css의 단점인 재활용성과 가독성을 보완할 수 있는 
-                  Scss를 사용하여 정해진 기한내 빠르게 작업하였습니다.<br><br>
-
-                  더 나은 사용자 경험을 제공하고 나아가 비즈니스 성장에 기여하는 일을 하고 싶습니다.
-                  이를 위해 Single Page Application, Web-App 개발 시 사용하는 Front-End Framework를 하나씩 공부해 나갈 계획이며
-                  Front-End Framework 중 러닝 커브가 낮은 Vue.js를 공부하여 본 포트폴리오를 제작하였습니다.`,
+          question: '지금까지의 업무 경험에 대하여 설명해주세요.',
+          answer: `4년차 웹퍼블리셔로 웹에이전시에서 웹 서비스 개발과 유지보수, 프리랜서로 개발 프로젝트에 참여했습니다.
+                  웹에이전시에서는 학교와 복지관 위주의 개발을 진행하여 
+                  웹표준에 대한 이해와 웹접근성을 준수하는 마크업과 반응형 웹 설계 및 크로스브라우징 구현을 해왔으며, 
+                  디자인과 퍼블리싱 두가지 업무를 동시에 하였기에 웹에 적합한 적합한 UI/UX에 대한 경험과 감각을 바탕으로 커뮤니케이션 할 수 있습니다. 
+                  <br><br>
+                  그리고 반복되는 일을 줄이고 유지보수에 효율적으로 개발하기 위해 고민합니다.
+                  지난 대한항공케이터링센터와 한솔PNS 프로젝트에서는 
+                  효율적인 작업을 위해 자동화 빌드 툴인 Gulp와 
+                  Css3를 구조화하여 표현할 수 있는 Scss전처리기를 활용하여 업무 효율을 높이고자 하였습니다.
+                  <br><br>
+                  그래서 대한항공케이터링센터에서의 기내식관리시스템(AFS), 
+                  주요 기내면세품 실적 관리시스템(IFS), 
+                  기내식 관리시스템(COS) 3가지 백오피스에 대한 UI고도화 구축을 정해진 기한내 완료하였고, 
+                  한솔PNS PMS UI 고도화 구축 프로젝트에서는 퍼블리싱한 Html5,Css3,Javascript 코드를 
+                  백엔드 개발자들이 활용하여 개발할 수 있도록 개발하였습니다.`,
         },
         {
           question: '기억에 남는 개발 프로젝트가 있다면 무엇인가요?',
-          answer: `전 직장동료의 추천으로 프리랜서로 참여했던, 대한항공케이터링센터 프로젝트가 가장 기억에 남습니다.<br><br>
-
-                  이 프로젝트에서는 6개월간 기내면세품 관리시스템(AFS:Advanced Flight Service & Catering System),
-                  기내식 관리시스템(COS:Catering Operation System),
-                  주요 기내면세품 실적 관리시스템(IFS:In-flight Sales Analysis System), 
-                  이렇게 세가지의 백오피스 UI고도화를 진행하였는데 개발완료 후 
-                  유지보수 담당자분께 인수인계할 때 담당자분께서는 Html,Css에 대해서는 잘 모르셔서, 
-                  좀 더 유지보수를 고려한 코드를 작성했으면 좋았겠다는 아쉬움이 남았습니다.<br><br>
-
-                  이를 계기로 Front-End Framework와 TypeScript의 필요성을 느끼게 되어, 
-                  Vue.js를 공부하게 되었고 앞으로 하나씩 습득하여 더 나은 웹 서비스를 제공하고 싶습니다.`,
+          answer: `최근 대한항공케이터링센터 프로젝트가 가장 기억에 남습니다.
+                  <br><br>
+                  해당 프로젝트는 백오피스 UI고도화로 6개월간 
+                  오래전 개발되어 IE에서만 구동되고 있던 기내면세품 관리시스템(AFS), 기내식 관리시스템(COS) 두가지에 대한
+                  UI개선 작업과 주요 기내면세품 실적 관리시스템(IFS)에 대한 신규개발 작업의 퍼블리싱을 전담하였습니다.
+                  <br><br>
+                  기존의 코드를 최대한 활용하되 웹표준에 어긋난 코드는 개선하였고
+                  사용자 인터렉션과 관련이 있는 레거시 코드를 줄였습니다.
+                  <br><br>
+                  하지만 개발완료 후 인수인계를 하면서, 
+                  스스로 좀 더 직관적이고 가독성이 좋은 코드를 작성에 대한 아쉬움이 생겼고
+                  이를 계기로 Front-End Framework에 대한 필요성을 느끼게 되어
+                  Vue.js를 학습하게 되었습니다.`,
         },
         {
           question: '업무 역량을 강화하기 위한 본인의 학습 방법을 설명해주세요.',
-          answer: `새로운 기술을 배워 토이 프로젝트를 만들거나 누군가에게 설명하는 방법이 좋다고 생각합니다.<br><br>
-
+          answer: `토이 프로젝트를 만들거나 누군가에게 설명하는 방법이 좋다고 생각합니다.
+                  <br><br>
                   처음 일을 시작하였을 때, jQuery와 기초적인 Javascript만 사용했습니다. 
                   하지만 기술 트렌드가 바뀌면서 역량강화를 위해서 javascript(ES6), Vue.js에 대해서
-                  강의를 들으며 예제를 따라 하지만 이렇게만 하면 이해가 안 되는 부분이 많습니다.
-                  그래서 스터디를 만들어서 함께 공부하기도 하지만 미리 강의를 듣고 스터디 파트너가 
+                  강의를 들으며 예제를 따라했지만 이렇게만 하면 이해가 잘되지 않는 경우가 많습니다.
+                  그래서 스터디를 만들어 함께 공부하기도 하고 미리 강의를 들은 후 스터디 파트너가 
                   잘 모르는 부분이 있을 때 설명을 할 수 있도록 준비하기도 합니다.
-                  그리고 최근에 배운 Vue.js를 좀 더 이해하기 위해 해당 포트폴리오를 만들어봤습니다.<br><br>
-
+                  <br><br>
+                  그리고 최근에 학습한 Vue.js에 이해와 적용을 확인하기 위해 해당 포트폴리오를 제작하였습니다.
+                  <br><br>
                   또 어려워 보이지 않는 스킬이면서 동시에 업무에 도움이 된다면, 다른 업무를 최대한 빠르게 진행하여 
                   시간적 여유를 만들어 놓은 후 생각하고 고민하고 찾아보기를 반복하며 적용하는 방향으로 학습하기도 합니다.`,
         },
       ],
+      isNav: false,
     }
   },
   mutations: {
@@ -332,7 +358,19 @@ const store = createStore({
     getModalTitle(state, payload){
       state.modal = payload;
     },
+    handleNav(state){
+      if(state.isNav != true){
+        state.isNav = true;
+        document.body.classList.add('offCanvas');
+      }else{
+        state.isNav = false;
+        document.body.classList.remove('offCanvas');
+      }
+    }
   }
 })
 
 export default store
+
+
+    

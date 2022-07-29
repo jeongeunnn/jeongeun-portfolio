@@ -7,8 +7,22 @@
       </router-link>
     </h2>
     <div class="header__btn">
-      <router-link to="./웹퍼블리셔-박정은.pdf" target="_blank" class="resume btn btn--dark-grey btn-sm">{{ buttons.resume }}</router-link>
-      <button @click="$store.commit('getModalTitle',`${buttons.contact}`)" type="button" class="btn btn--light-grey btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ buttons.contact }}</button>
+      <a 
+        href="./웹퍼블리셔-박정은.pdf" 
+        target="_blank"
+        class="resume btn btn--dark-grey btn-sm bi bi-file-earmark-text"
+      >
+        {{ buttons.resume }}
+      </a>
+      <button 
+        @click="$store.commit('getModalTitle',`${buttons.contact}`)" 
+        type="button" 
+        class="btn btn--light-grey btn-sm bi bi-envelope-paper" 
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal"
+      >
+        {{ buttons.contact }}
+      </button>
     </div>
     <button 
       v-if="isMobile === true" 
@@ -16,7 +30,7 @@
       ref="hamberger"
       class="btn hamberger"
       :class="{ 'close': isNav == true }"
-      @click="showNavigation"
+      @click="$store.commit('handleNav')"
     >
       <span></span>
     </button>
@@ -34,7 +48,6 @@
         isWideDevice: null,
         resume: '웹퍼블리셔-박정은.pdf',
         logoClassName: '',
-        isNav: false,
         hambergerClassName: 'close',
       }
     },
@@ -43,6 +56,7 @@
         buttons: 'buttons',
         logoSrc: state => state.logo.file,
         logoAlt: state => state.logo.alt,
+        isNav: 'isNav',
       })
     },
     created() {
@@ -53,15 +67,6 @@
       window.removeEventListener("resize", this.resize);
     },
     methods: {
-      showNavigation(){
-        if(this.isNav != true){
-          this.isNav = true;
-          document.body.classList.add('offCanvas');
-        }else{
-          this.isNav = false;
-          document.body.classList.remove('offCanvas');
-        }
-      },
       showElem(ww){
         if(ww < 768){
           this.isMobile = true;

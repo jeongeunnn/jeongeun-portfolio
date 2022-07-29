@@ -9,15 +9,11 @@
         <span>e</span>
       </p>
       <p class="word overhere">
+        <span>h</span>
         <span>o</span>
         <span>v</span>
         <span>e</span>
         <span>r</span>
-        <span>&nbsp;</span>
-        <span>h</span>
-        <span>e</span>
-        <span>r</span>
-        <span>e</span>
       </p>
     </div>
 </template>
@@ -153,20 +149,21 @@
     color: $white;
     filter: blur( 0.02vmin );
     animation: fade-in 1s ease-in-out forwards;
-    text-shadow: 0 0 2vmin rgb(255, 93, 93);
+    text-shadow: 0 0 1vw rgb(255, 93, 93), 0 0 2vw rgb(255, 93, 93);
+    text-align: center;
     span {
       display: inline-block;
     }
     &.mouse{
       font: {
-        size: 18vmin;
-        family: $playfair;
+        size: 8vw;
+        family: $prata;
         weight: 700;
       }
       margin: -10% 0 -5%;
       animation-delay: 1s;
       span {
-        margin-left: -5%;
+        margin-left: -0.5vw;
 
         &:nth-child( 1 ) {
           animation-delay: 0.6s;
@@ -191,15 +188,14 @@
     }
     &.overhere{
       font: {
-        size: 9vmin;
+        size: 4vw;
         family: $roboto;
         weight: 100;
       }
       text-transform: uppercase;
-      padding-left: 12%;
       animation-delay: 1.5s;
       span {
-        margin-left: -1.5%;
+        margin-left: -0.2vw;
 
         &:nth-child( 1 ) {
           animation-delay: 1.4s;

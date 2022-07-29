@@ -6,30 +6,36 @@
       <dt class="detail__title">Info</dt>
       <dd class="detail__contents">
         <dl>
-            <dt>직책</dt>
-            <dd>{{ timeline[id].position }}</dd>
-          </dl>
-          <dl>
-            <dt>기간</dt>
-            <dd>{{ timeline[id].period }}</dd>
-          </dl>
-          <dl>
-            <dt>담당업무</dt>
-            <dd>
-              <ul>
-                <li class="list-item" v-for="elem in timeline[id].role" :key="elem">{{ elem }}</li>
-              </ul>
-            </dd>
-          </dl>
+          <dt>주소</dt>
+          <dd>{{ timeline[id].address }}</dd>
+        </dl>
+        <dl>
+          <dt>직책</dt>
+          <dd>{{ timeline[id].position }}</dd>
+        </dl>
+        <dl>
+          <dt>기간</dt>
+          <dd>{{ timeline[id].period }}</dd>
+        </dl>
+        <dl>
+          <dt>담당업무</dt>
+          <dd>
+            <ul>
+              <li class="list-item" v-for="elem in timeline[id].role" :key="elem">{{ elem }}</li>
+            </ul>
+          </dd>
+        </dl>
       </dd>
     </dl>
     <dl class="detail" v-if="id != 2">
       <dt class="detail__title">View</dt>
       <dd class="detail__contents">
-        <ul class="project-list">
-          <li class="project round-box specific-project"
-          v-for="(item, index) in projects" :key="index">
-            <AppCard v-if="showSpecificCard(item)" :projects="projects[index]" />
+        <ul class="project-list row g-4">
+          <li 
+            :class="item.company != this.timeline[this.id].company ? `specific-project ${cName}` : cName"
+            v-for="(item, index) in projects" :key="index"
+          >
+            <AppCard :projects="projects[index]" />
           </li>
         </ul>
       </dd>
@@ -39,7 +45,7 @@
 
 <script>
   import AppTop from "../../components/AppTop";
-  import AppCard from "../../components/portfolio/AppCard";
+  import AppCard from "../../components/AppCard";
 
   import { mapState } from "vuex";
 
@@ -48,16 +54,19 @@
     data(){
       return{
         id: Number(this.$route.params.id),
+        cName: '',
       }
     },
     components: {
       AppTop,
       AppCard
     },
-    methods: {
-      showSpecificCard(item){
-        return item.company == this.timeline[this.id].company;
-      }
+    created() {
+      this.checkSize();
+      window.addEventListener("resize", this.checkSize);
+    },
+    unmounted() {
+      window.removeEventListener("resize", this.checkSize);
     },
     computed: {
       ...mapState({
@@ -68,12 +77,23 @@
     mounted() {
       const elem = document.querySelectorAll('.specific-project');
       Array.prototype.forEach.call(elem,function (elems){
-        const childElem = elems.childNodes;
-        Array.prototype.forEach.call(childElem,function (childElems){
-          childElems.className == 'project__box'? null : elems.remove();
-        });
+        elems.remove();
       });
     },
+    methods: {
+      checkSize(){
+        const ww = document.body.clientWidth;
+        if(ww >= 1400){
+          this.cName = 'col-xxl-2';
+        }else if(ww < 1400 && ww >= 1200){
+          this.cName = 'col-xl-3';
+        }else if(ww < 1200 && ww >= 992){
+          this.cName = 'col-lg-4';
+        }else if(ww < 992 && ww >= 768){
+          this.cName = 'col-md-6';
+        }
+      },
+    }
   }
 </script>
 

@@ -75,7 +75,7 @@ body{
   padding-left: $side-bar-width;
   transition: padding-left 0.5s;
   @include media-breakpoint-down(md) {
-    padding: {left: 0;bottom:$icon-size1;}
+    padding: {left: 0 !important;bottom:$icon-size1;}
   }
   main{
     display: flex;

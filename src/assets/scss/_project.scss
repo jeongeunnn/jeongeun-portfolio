@@ -44,15 +44,24 @@
     transition: opacity 0.35s;
     padding: 21px;
     text-align: center;
+    border-radius: $top-bottom-padding;
     b{
+      display: block;
+      width: 100%;
       font: {
         size: 1.1rem;
         weight: bold;
       };
       line-height: 1.5;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
     p{
-      font-weight: lighter;
+      font: {
+        size: 0.9rem;
+        weight: lighter;
+      };
       margin-top: 10px;
     }
     b,p{
@@ -92,5 +101,8 @@
   img{
     width: 100%; height: 100%;
     object-fit: cover;
+  }
+  &.ani{
+    aspect-ratio: 1.2/1;
   }
 }

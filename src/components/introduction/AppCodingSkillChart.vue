@@ -57,7 +57,7 @@
           labels: ['Javascript', 'vue.js', 'jQuery', 'Html5', 'Css3', 'Scss', 'Bootstrap'],
           datasets: [
             {
-              data: [75, 55, 80, 90, 90, 70, 60],
+              data: [80, 60, 90, 90, 90, 70, 60],
               backgroundColor: [
                 '#F4BFBF',
                 '#FFD9C0',

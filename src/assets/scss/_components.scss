@@ -137,10 +137,13 @@
       & ~ dd{
         flex: 1 1 0;
         width: calc(100% - 100px);
+        a{
+          color: $primary-blue;
+        }
       }
       @include media-breakpoint-down(xxl) {
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         & ~ dd{
           width: 100%;
         }
@@ -333,4 +336,8 @@
       color: var(--success-color);
     }
   }
+}
+.swiper-slide{
+  border-radius: $top-bottom-padding;
+  overflow: hidden;
 }

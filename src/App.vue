@@ -11,7 +11,7 @@
   </div>
   <AppSideBar v-if="hideAllElems" />
   <div id="container" v-if="hideAllElems">
-    <AppHeader />
+    <AppHeader :isNav="isNav" />
     <main>
       <router-view></router-view>
     </main>
@@ -21,15 +21,6 @@
     <AppModal :modal="modal"/>
   </div>
   <router-view v-if="hideSpecificElem"></router-view>
-  <!-- :class="{ 'only-element': this.$route.meta.hideAllElems }" -->
-  <!-- https://www.rocketpunch.com/cards/post/492158 
-  https://app.svgator.com/#/
-  https://anyconv.com/svg-to-html-converter/
-  https://getbootstrap.com/docs/5.2/utilities/sizing/
-  https://fonts.google.com/icons?icon.query=che
-  https://www.htmlelements.com/demos/page-templates/admin-template/plugins
-  https://bashooka.com/coding/css-javascript-blob-animation-examples/
-  https://bestofvue.com/repo/J-T-McC-vue3-chartjs-vuejs-charts-->
 </template>
 
 <script>
@@ -67,7 +58,7 @@
           document.querySelector('html').classList.remove('for-only-element');
         }
       }
-    }
+    },
   }
 </script>
 

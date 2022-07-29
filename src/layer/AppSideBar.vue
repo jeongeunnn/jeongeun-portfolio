@@ -33,7 +33,14 @@
     />
     <!-- sns -->
     <div class="sns">
-      <a href="#" v-for="(item, index) in sns" :key="index" :title="`${sns[index].title}`" :class="sns[index].cName"></a>
+      <a 
+        :href="item.url"
+        target="_blank" 
+        v-for="(item, index) in sns" :key="index" 
+        :title="`${item.title}`" 
+        :class="item.cName"
+      >
+      </a>
     </div>
   </aside>
 </template>

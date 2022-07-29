@@ -22,6 +22,13 @@ body{
     display: flex;
     gap: 4px;
     order:1;
+    .btn{
+      &::before{
+        vertical-align: middle;
+        padding-right: 4px;
+        font-size: 1.15rem;
+      }
+    }
     @include media-breakpoint-down(md) {
       .resume{
         display: flex;
@@ -35,7 +42,7 @@ body{
     }
   }
   @include media-breakpoint-down(md) {
-    width: 100%; height: $icon-size3;
+    width: 100% !important; height: $icon-size3;
     padding: 0 $icon-size1;
     .m-logo{
       height: $icon-size1 + 10px;

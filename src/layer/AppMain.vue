@@ -1,25 +1,25 @@
 <template>
   <section class="mainpage">
-      <article class="section1__left">
-        <AppIntro/>
+    <article class="section1__left">
+      <AppIntro/>
+    </article>
+    <article class="section1__right">
+      <AppProfile/>
+    </article>
+    <article class="section2__left">
+      <AppExperience :role="role"/>
+    </article>
+    <div class="section2__right">
+      <article class="top">
+        <AppCodingSkill/>
       </article>
-      <article class="section1__right">
-        <AppProfile/>
+      <article class="middle">
+        <AppProject/>
       </article>
-      <article class="section2__left">
-        <AppExperience :role="role"/>
+      <article class="bottom">
+        <AppAnimations/>
       </article>
-      <div class="section2__right">
-        <article class="top">
-          <AppCodingSkill/>
-        </article>
-        <article class="middle">
-          <AppProject/>
-        </article>
-        <article class="bottom">
-          <AppAnimations/>
-        </article>
-      </div>
+    </div>
   </section>
   
 </template>
@@ -43,7 +43,7 @@
     name: 'AppMain',
     data() {
       return {
-        role: false
+        role: false,
       }
     },
     components: {

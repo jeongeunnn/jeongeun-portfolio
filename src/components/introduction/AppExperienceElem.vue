@@ -2,7 +2,7 @@
   <div class=" timeline">
     <dl class="detail" v-for="(item, index) in timeline" :key="index">
       <dt class="detail__title">
-        <router-link :to="`/introduction/detail/${item.id}`">{{ item.company }}</router-link>
+        <router-link :to="`/introduction/detail/${item.id}`">{{ item.company }}&nbsp;<i class="bi bi-box-arrow-up-right"></i></router-link>
       </dt>
       <dd class="detail__contents">
           <dl>

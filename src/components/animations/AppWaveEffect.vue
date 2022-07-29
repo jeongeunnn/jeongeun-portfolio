@@ -12,7 +12,7 @@
             this.totalWaves = 3;
             this.numberOfPoints = 6;
 
-            this.color = ['rgba(255, 199, 95, 0.8)', 'rgba(255, 94, 120, 0.8)', 'rgba(132, 94, 194, 0.8)', ];
+            this.color = ['rgba(37, 104, 236, 0.8)', 'rgba(81, 177, 254, 0.8)','rgba(100, 219, 255, 0.8)'];
 
             this.wave = [];
 
@@ -168,6 +168,6 @@
 <style lang="scss" scoped>
   #wave{
     position:fixed; top:0; left:0;
-    background-color: #2F1B41;
+    background-color: rgb(19 14 104);
   }
 </style>

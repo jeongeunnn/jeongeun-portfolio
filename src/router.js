@@ -10,8 +10,8 @@ import AppIntroDetailPage from './pages/introduction/AppDetailPage.vue';
 import AppProjectPage from './pages/portfolio/AppPage.vue';
 import AppProjectDetailPage from './pages/portfolio/AppDetailPage.vue';
 //contents animations
-import AppAniContentsPage from './pages/ani_contents/AppPage.vue';
-import AppAniContentsDetailPage from './pages/ani_contents/AppDetailPage.vue';
+import AppAniContentsPage from './pages/animation/AppPage.vue';
+import AppAniContentsDetailPage from './pages/animation/AppDetailPage.vue';
 
 
 
@@ -94,27 +94,6 @@ const routes = [
         meta: {
           hideAllElems: true,
           name: 'animation'
-        }
-      },
-    ]
-  },
-  {
-    name: 'Contents',
-    path: '/contents',
-    component: AppPage,
-    children: [
-      {
-        name:'All Contents',
-        path: '',
-        component: AppAniContentsPage,
-      },
-      {
-        name: 'Contents Detail',
-        path: ':id',
-        component: AppAniContentsDetailPage,
-        meta: {
-          hideAllElems: true,
-          name: 'contents'
         }
       },
     ]

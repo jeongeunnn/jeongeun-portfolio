@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import AppCard from "../../components/portfolio/AppCard";
+  import AppCard from "../../components/AppCard";
   import AppTop from "../../components/AppTop";
 
   import { mapState } from "vuex";

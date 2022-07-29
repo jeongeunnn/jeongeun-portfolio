@@ -1,23 +1,21 @@
 .mainpage{
   flex: 1 1 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr); 
+  display: flex;
+  flex-direction: column;
   gap: $icon-size1;
-
-  grid-template-rows: repeat(4, auto); 
-  .section1__left { grid-column: 1/13;grid-row: 1;}
-  .section1__right { grid-column: 1/13;grid-row: 2;}
-  .section2__left { grid-column: 1/13;grid-row: 3;}
-  .section2__right{ grid-column: 1/13;grid-row: 4; }
   @include media-breakpoint-up(xxl) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
     grid-template-rows: 1fr 0 auto;
     .section1__left { grid-column: 1/10;grid-row: 1;}
     .section1__right { grid-column: 10/13;grid-row: 1;}
-    .section2__left { grid-column: 1/6;grid-row: 3;}
-    .section2__right{ grid-column: 6/13;grid-row: 3; }
+    .section2__left { grid-column: 1/5;grid-row: 3;}
+    .section2__right{ grid-column: 5/13;grid-row: 3; }
   }
   @include media-breakpoint-between(xl, xxl) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
     grid-template-rows: 1fr 0 auto;
     .section1__left { grid-column: 1/9;grid-row: 1;}
     .section1__right { grid-column: 9/13;grid-row: 1;}
@@ -63,7 +61,11 @@
     .round-box{
       padding: calc($icon-size1 * 2);
       @include media-breakpoint-down(md) {
+        display: block;
+        opacity: 1;
+        visibility: visible;
         padding: $icon-size1;
+        flex: 1 1 auto;
       }
     }
   }
