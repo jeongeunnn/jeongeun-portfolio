@@ -4,16 +4,16 @@
 
 ### 사용한 플러그인
 ```
+- vuex
+- bootstrap
 - sass-loader
 - node-sass
-- bootstrap
 - chart.js
 - gsap
 - emailjs
 - vee-validate
 - charming
 - swiper
-- vuex
 - spline
 ```
 
