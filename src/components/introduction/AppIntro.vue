@@ -1,7 +1,7 @@
 <template>
   <div class="round-box">
     <AppSvg/>
-    <h3 class="fs-3">This is<br>A <b class="fw-bold">Web Publisher's Portfolio</b></h3>
+    <h3 class="fs-3">This is<br>A <b class="fw-bold">UI Developer's Portfolio</b></h3>
     <p>
       안녕하세요:) 매일매일 성장하는 4년차 UI개발자(웹퍼블리셔) 박정은입니다.<br>
       사용자 중심적인 웹사이트 구현을 위해 꾸준히 공부하며 경력을 쌓아 왔습니다. 
