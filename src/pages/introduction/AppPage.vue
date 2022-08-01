@@ -8,7 +8,7 @@
         <span class="blinking-cursor">|</span>
       </h6>
       <h6 class="typing-box__text hide">
-        <span>안녕하세요:)<br>매일매일 성장하는<br>4년차 웹퍼블리셔 박정은입니다.</span>
+        <span>안녕하세요:)<br>매일매일 성장하는<br>4년차 UI개발자(웹퍼블리셔) 박정은입니다.</span>
         <span class="blinking-cursor">|</span>
       </h6>
     </article>
@@ -92,7 +92,7 @@
     data() {
       return {
         role: true,
-        displayTextArray: ['안녕하세요:)', '매일매일 성장하는', '4년차 웹퍼블리셔 박정은입니다.'],
+        displayTextArray: ['안녕하세요:)', '매일매일 성장하는', '4년차 UI개발자(웹퍼블리셔) 박정은입니다.'],
         typingSpeed: 100,
         charIndex: 0,
         textArrayIndex: 0,

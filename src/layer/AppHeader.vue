@@ -8,7 +8,7 @@
     </h2>
     <div class="header__btn">
       <a 
-        href="./웹퍼블리셔-박정은.pdf" 
+        href="./UI개발자(웹퍼블리셔)-박정은.pdf" 
         target="_blank"
         class="resume btn btn--dark-grey btn-sm bi bi-file-earmark-text"
       >
@@ -46,7 +46,7 @@
       return {
         isMobile: null,
         isWideDevice: null,
-        resume: '웹퍼블리셔-박정은.pdf',
+        resume: 'UI개발자(웹퍼블리셔)-박정은.pdf',
         logoClassName: '',
         hambergerClassName: 'close',
       }
