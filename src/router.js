@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 
 import AppMain from './layer/AppMain.vue';
 import AppPage from './layer/AppPage.vue';
@@ -101,7 +101,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+  history: createWebHashHistory(),
     routes,
 });
 
